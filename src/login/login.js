@@ -8,11 +8,12 @@ export class Login{
     constructor(router, authenticationService){
         this.router = router;
         this.authenicationService = authenticationService;
+        this.msg;
     }
 
     authenicate(username, password) {
-        var auth =  this.authenicationService.authenticate(username, password);
-        console.log(">>>>> " + auth);
+        this.authenicationService.authenticate(username, password);
+        this.router.navigate("#/main_dashboard");
     }
 
     register() {

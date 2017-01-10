@@ -9,8 +9,13 @@ export class AuthenticationService {
     }
 
     authenticate(username, password) {
-        var path = 'http://localhost:8081/login?username=' + username + '&password=' + password;
-        this.httpClient.post(path)
+        var userCredentials = {
+            "username":username,
+            "password":password
+        }
+
+        var path = 'http://localhost:8081/login';
+        this.httpClient.post(path, userCredentials)
                .then(response=> {
                     console.log('authenicate > ', response);
                }, error=> {
