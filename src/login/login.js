@@ -1,6 +1,6 @@
 import {inject} from 'aurelia-framework';
 import {Router} from 'aurelia-router';
-import {AuthenticationService} from 'security/authenticationService';
+import {AuthenticationService} from 'login/authenticate/authenticationService';
 
 @inject(Router, AuthenticationService)
 export class Login{
@@ -12,8 +12,15 @@ export class Login{
     }
 
     authenicate(username, password) {
-        this.authenicationService.authenticate(username, password);
-        this.router.navigate("#/main_dashboard");
+
+     this.authenicationService.authenticate(username, password)
+         .then(response =>{
+                console.log("login response", response);
+                this.router.navigate("#/main_dashboard");
+            }, error =>{
+                console.log("login response", error);
+                this.msg = "Username or password is incorrect.";
+        });
     }
 
     register() {

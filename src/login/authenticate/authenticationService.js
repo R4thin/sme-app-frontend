@@ -15,13 +15,16 @@ export class AuthenticationService {
         }
 
         var path = 'http://localhost:8081/login';
-        this.httpClient.post(path, userCredentials)
-               .then(response=> {
+        var promise = new Promise((resolve, reject) => {
+            this.httpClient.post(path, userCredentials)
+                .then(response=> {
+                    resolve(response);
                     console.log('authenicate > ', response);
-               }, error=> {
+                }, error=> {
+                    reject(error);
                     console.log('error > ', error);
-            });
-
-        return null;
+                });
+        });
+        return promise;
     }
 }
