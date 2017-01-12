@@ -3,13 +3,13 @@
     <form>
         <header>Login / Register</header>
         <div class="validation" show.bind="msg">${msg}</div>
-        <label>Username <span>*</span></label>
+        <label>Username/Email</label>
         <input value.bind="username"/>
         <div class="help">At least 6 character</div>
-        <label>Password <span>*</span></label>
+        <label>Password </label>
         <input value.bind="password" type="password"/>
         <div class="help">Use upper and lowercase lettes as well</div>
-        <button click.trigger="authenicate(username, password)">Login</button>
+        <button click.trigger="authenicate()">Login</button>
         <button click.trigger="register()" class="register_button">Register</button>
     </form>
     </body>

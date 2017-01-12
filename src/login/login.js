@@ -1,6 +1,6 @@
 import {inject} from 'aurelia-framework';
 import {Router} from 'aurelia-router';
-import {AuthenticationService} from 'login/authenticate/authenticationService';
+import {AuthenticationService} from 'login/authentication/authenticationService';
 
 @inject(Router, AuthenticationService)
 export class Login{
@@ -9,11 +9,12 @@ export class Login{
         this.router = router;
         this.authenicationService = authenticationService;
         this.msg;
+        this.username;
+        this.password;
     }
 
-    authenicate(username, password) {
-
-     this.authenicationService.authenticate(username, password)
+    authenicate() {
+     this.authenicationService.authenticate(this.username, this.password)
          .then(response =>{
                 console.log("login response", response);
                 this.router.navigate("#/main_dashboard");

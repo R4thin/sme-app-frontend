@@ -10,7 +10,7 @@ export class AuthenticationService {
 
     authenticate(username, password) {
         var userCredentials = {
-            "username":username,
+            "preference":username,
             "password":password
         }
 
