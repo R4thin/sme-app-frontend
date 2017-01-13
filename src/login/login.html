@@ -1,16 +1,16 @@
 <template>
-    <body>
+    <div id="container_login">
     <form>
         <header>Login / Register</header>
-        <div class="validation" show.bind="msg">${msg}</div>
-        <label>Username/Email</label>
+        <div class="help" show.bind="msg">${msg}</div>
+        <label>Username <span>*</span></label>
         <input value.bind="username"/>
         <div class="help">At least 6 character</div>
-        <label>Password </label>
+        <label>Password <span>*</span></label>
         <input value.bind="password" type="password"/>
         <div class="help">Use upper and lowercase lettes as well</div>
-        <button click.trigger="authenicate()">Login</button>
+        <button click.trigger="authenicate(username, password)">Login</button>
         <button click.trigger="register()" class="register_button">Register</button>
     </form>
-    </body>
+    </div>
 </template>
