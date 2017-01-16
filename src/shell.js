@@ -10,19 +10,34 @@ export class Shell {
         config.map([
             {
                 route: ['', 'login'], moduleId: 'login/login',
-                name: 'Login', title: 'Login', nav: true
+                name: 'Login', title: 'Login', nav: false
             },
 
             {
                 route: 'registration', moduleId: 'registration/registration',
-                name: "registration", title: 'Registration', nav: true
+                name: "registration", title: 'Registration', nav: false
             },
 
             {
                 route: 'main_dashboard', moduleId: 'dashboard/main_dashboard',
-                name: "main_dashboard", title: 'Dashboard', nav: true
+                name: "main_dashboard", title: 'Dashboard', nav: false
             },
-
+            {
+                route: 'main_dashboard/customers', moduleId: 'dashboard/customer/customers',
+                name: "customers", title: 'Customers', nav: true
+            },
+            {
+                route: 'main_dashboard/calendar', moduleId: 'dashboard/calendar/calendar',
+                name: "calendar", title: 'Calendar', nav: true
+            },
+            {
+                route: 'main_dashboard/invoices', moduleId: 'dashboard/invoice/invoices',
+                name: "invoices", title: 'Invoices', nav: true
+            },
+            {
+                route: 'main_dashboard/employees', moduleId: 'dashboard/employees/employees',
+                name: "employees", title: 'Employees', nav: true
+            }
         ]);
     }
 

@@ -1,15 +1,21 @@
 <template>
     <div id="container_main_dashboard">
-    <form>
-        <div class="main_dashboard">
-         <header>Main Dashboard</header>
-        </div>
-    </form>
-    <ul>
-        <li><a href="default.asp">Home</a></li>
-        <li><a href="news.asp">News</a></li>
-        <li><a href="contact.asp">Contact</a></li>
-        <li><a href="about.asp">About</a></li>
-    </ul>
+        <form>
+            <div class="main_dashboard">
+                <div class="main_dashboard_box"/>
+                <div class="main_dashboard_header">Main Dashboard</div>
+            </div>
+            <div class="container-fluid">
+                <ul>
+                    <li repeat.for="route of router.navigation" class="${route.isActive ? 'active': ''}">
+                        <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1.in"
+                           href.bind="route.href">${route.title}</a>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+    <div class="container-fluid">
+        <router-view></router-view>
     </div>
 </template>

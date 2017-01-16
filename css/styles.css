@@ -34,15 +34,80 @@ html, body {
     width: 98%;
     left: 0.9%;
     height: 98%;
+    color: black;
 }
 
-/*body {*/
-    /*background: silver;*/
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    /*font-size: 16px;*/
-/*}*/
+#container_main_dashboard_children {
+    position: fixed;
+    width: 98%;
+    left: 1.0%;
+    height: 77%;
+    margin-top: 30px;
+}
+
+#main_dashboard_children_box{
+    position: fixed;
+    width: 97.8%;
+    left: 1.0%;
+    height: 77%;
+    border : 0.1px solid darkgray;
+    border-radius: 0px 0px 10px 10px;
+    margin-top: -16px;
+}
+
+#main_dashboard_children_content_box{
+    position: fixed;
+    width: 96%;
+    left: 2.0%;
+    height: 72%;
+    /*border : 0.1px solid darkgray;*/
+    border-radius: 0px 0px 10px 10px;
+    margin-top: 20px;
+
+}
+
+
+
+#search_img{
+    position: fixed;
+    left: 2.5%;
+    padding: 14px 13px;
+    background: url("imgs/search_icon.png") no-repeat scroll -1px 0px;
+}
+
+.textinput{
+    position: fixed;
+    left: 4%;
+    margin: 0;
+    /*padding: 5px 10px;*/
+    font-family: lato;
+    font-size: 17px;
+    font-style: italic;
+    color: black;
+    background: silver;
+    border-left-color: transparent;
+    border-top-color: transparent;;
+    border-right-color: transparent;;
+    border-bottom-color: black;
+    border-bottom-right-radius: 10px;
+    width: 20%;
+
+}
+
+#main_dashboard_children_content{
+    left: 2.5%;
+    font-family: lato;
+    font-size: 21px;
+    color: black;
+
+    display: inline-block;
+    margin-top: 60px;
+    margin-bottom: -40px;
+    position: relative;
+    width: 95%;
+    text-align: left;
+    float: left;
+}
 
 form {
     background: white;
@@ -58,11 +123,26 @@ form {
 form .main_dashboard{
     background: white;
     width: 100%;
-    box-shadow: 0px 15px 20px rgba(0, 0, 0, 1);
+    /*box-shadow: 0px 15px 20px rgba(0, 0, 0, 1);*/
     font-family: lato;
     position: relative;
     color: #333;
     border-radius: 20px;
+}
+
+form .main_dashboard_box{
+    background: #3c3c3c;
+    padding: 60px 20px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+form .main_dashboard_header{
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    right: 46%;
+    position: fixed;
+    margin-right: 0px;
 }
 
 form header {
@@ -180,3 +260,30 @@ form button:hover {
     /*background: #ff5252;*/
     background: #4cae4c;
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    border-radius: 0px 0px 0px 0px;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+

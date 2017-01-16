@@ -1,0 +1,22 @@
+<template>
+    <div id="container_main_dashboard_children">
+        <div id="main_dashboard_children_box">
+            <div id="main_dashboard_children_content_box">
+                <div id="search_img"></div>
+                <input type="text" name="search" class="textinput" placeholder="Please enter search criteria"
+                       maxlength="50"/>
+                <div repeat.for="customer of customers">
+                    <div colspan="6" id="main_dashboard_children_content">
+                        ${customer.id}. <span style="margin-left: 5em"></span>
+                        ${customer.title}<span style="margin-left: 5em"></span>
+                        ${customer.firstName}<span style="margin-left: 5em"></span>
+                        ${customer.surname}<span style="margin-left: 5em"></span>
+                        ${customer.email}<span style="margin-left: 5em"></span>
+                        ${customer.address}<span style="margin-left: 5em"></span>
+                        ${customer.date}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
