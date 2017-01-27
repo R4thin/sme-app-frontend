@@ -1,16 +1,43 @@
 <template>
-    <div id="container_login">
-    <form>
-        <header>Login / Register</header>
-        <div class="help" show.bind="msg">${msg}</div>
-        <label>Username <span>*</span></label>
-        <input value.bind="username"/>
-        <div class="help">At least 6 character</div>
-        <label>Password <span>*</span></label>
-        <input value.bind="password" type="password"/>
-        <div class="help">Use upper and lowercase lettes as well</div>
-        <button click.trigger="authenicate(username, password)">Login</button>
-        <button click.trigger="register()" class="register_button">Register</button>
-    </form>
+    <head>
+        <link href="assets/css/custom-styles.css" rel="stylesheet"/>
+    </head>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table id="login-template">
+                <thead>
+                <tr>
+                    <th class="login-registration-header">Login / Register</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr show.bind="msg">
+                    <td>
+                        <div class="login-help" show.bind="msg">${msg}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label><span>*</span> Username</label>
+                        <input value.bind="username"/>
+                        <div class="login-help">At least 6 character</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label><span>*</span> Password</label>
+                        <input value.bind="password" type="password"/>
+                        <div class="login-help">Use upper and lowercase lettes as well</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button click.trigger="authenicate(username, password)">Login</button>
+                        <button click.trigger="register()" class="register_button">Register</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </template>

@@ -1,22 +1,37 @@
 <template>
-    <div id="container_main_dashboard_children">
-        <div id="main_dashboard_children_box">
-            <div id="main_dashboard_children_content_box">
-                <div id="search_img"></div>
-                <input type="text" name="search" class="textinput" placeholder="Please enter search criteria"
-                       maxlength="50"/>
-                <div repeat.for="customer of customers">
-                    <div colspan="6" id="main_dashboard_children_content">
-                        ${customer.id}. <span style="margin-left: 5em"></span>
-                        ${customer.title}<span style="margin-left: 5em"></span>
-                        ${customer.firstName}<span style="margin-left: 5em"></span>
-                        ${customer.surname}<span style="margin-left: 5em"></span>
-                        ${customer.email}<span style="margin-left: 5em"></span>
-                        ${customer.address}<span style="margin-left: 5em"></span>
-                        ${customer.date}
-                    </div>
-                </div>
-            </div>
+    <head>
+        <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+        <link href="assets/css/custom-styles.css" rel="stylesheet"/>
+        <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet"/>
+    </head>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <thead>
+                <tr>
+                    <th>ID number</th>
+                    <th>Title</th>
+                    <th>Firstname</th>
+                    <th>Surname</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Address</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="odd gradeX" repeat.for="customer of customers">
+                    <td>${customer.id}.</td>
+                    <td>${customer.title}</td>
+                    <td>${customer.firstName}</td>
+                    <td>${customer.surname}</td>
+                    <td>${customer.email}</td>
+                    <td>${customer.mobile}</td>
+                    <td>${customer.address}</td>
+                    <td>${customer.date}</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </template>

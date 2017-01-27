@@ -1,22 +1,63 @@
 <template>
-    <div id="container_registration">
-        <form>
-            <header>Registration</header>
-            <div class="validation" show.bind="msg">${msg}</div>
-            <label>Username <span>*</span></label>
-            <input value.bind="username"/>
-            <label>Firstname <span>*</span></label>
-            <input value.bind="firstName"/>
-            <label>Surname <span>*</span></label>
-            <input value.bind="surname"/>
-            <label>Email <span>*</span></label>
-            <input value.bind="email" type="email"/>
-            <label>Password <span>*</span></label>
-            <input value.bind="password" type="password"/>
-            <label>Confirm password <span>*</span></label>
-            <input/>
-            <button click.trigger="register()">Submit</button>
-            <button click.trigger="cancel()" class="cancel_button">Cancel</button>
-        </form>
+    <link href="assets/css/custom-styles.css" rel="stylesheet"/>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table id="registration-template">
+                <thead class="login_head">
+                <tr>
+                    <th class="login-registration-header" align="centre">Registration</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr show.bind="msg">
+                    <td>
+                        <div class="sign-up-help" show.bind="msg">${msg}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Username <span>*</span></label>
+                        <input value.bind="username"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Firstname <span>*</span></label>
+                        <input value.bind="firstName"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Surname <span>*</span></label>
+                        <input value.bind="surname"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Email <span>*</span></label>
+                        <input value.bind="email" type="email"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Password <span>*</span></label>
+                        <input value.bind="password" type="password"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Confirm password <span>*</span></label>
+                        <input value.bind="password" type="password"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button click.trigger="register()">Submit</button>
+                        <button click.trigger="cancel()" class="cancel_button">Cancel</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </template>

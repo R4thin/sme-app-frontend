@@ -20,6 +20,26 @@ export class Customers{
                 mobile:"071 333 1133",
                 address:"35 Little Street, White heart lane....",
                 date:"01 March 2015"
+            },
+            {
+                id:2,
+                title:"Miss",
+                firstName:"Clair",
+                surname:"Billy",
+                email:"cbilly@gmail.com",
+                mobile:"071 333 1133",
+                address:"35 Little Street, White heart lane....",
+                date:"01 March 2015"
+            },
+            {
+                id:2,
+                title:"Miss",
+                firstName:"Clair",
+                surname:"Billy",
+                email:"cbilly@gmail.com",
+                mobile:"071 333 1133",
+                address:"35 Little Street, White heart lane....",
+                date:"01 March 2015"
             }
         ]
     }
