@@ -26,8 +26,8 @@ export class Shell {
                 name: 'customers', title: 'Customers', nav: true
             },
             {
-                route: 'main_dashboard/calendar', moduleId: 'dashboard/calendar/calendars',
-                name: 'calendars', title: 'Calendars', nav: true
+                route: 'main_dashboard/calendars', moduleId: 'dashboard/calendar/calendars',
+                name: 'calendar', title: 'Calendar', nav: true
             },
             {
                 route: 'main_dashboard/invoices', moduleId: 'dashboard/invoice/invoices',
