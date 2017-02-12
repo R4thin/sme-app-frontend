@@ -8,6 +8,7 @@ export class Customers {
         this.customerData = customerData;
         this.router = router;
         this.idNumber;
+        this.title;
         this.firstName;
         this.surname;
         this.email;
@@ -15,57 +16,45 @@ export class Customers {
         this.address;
         this.date;
 
-        this.customers = [{
-            id: 1,
-            title: "Mr",
-            firstName: "Harry",
-            surname: "Ford",
-            email: "harry@gmail.com",
-            mobile: "072 449 3322",
-            address: "21 Giant Street, Surrey est....",
-            date: "01 January 2016"
+        this.customers;
+    }
 
-        },
-            {
-                id: 2,
-                title: "Miss",
-                firstName: "Clair",
-                surname: "Billy",
-                email: "cbilly@gmail.com",
-                mobile: "071 333 1133",
-                address: "35 Little Street, White heart lane....",
-                date: "01 March 2015"
-            },
-            {
-                id: 2,
-                title: "Miss",
-                firstName: "Clair",
-                surname: "Billy",
-                email: "cbilly@gmail.com",
-                mobile: "071 333 1133",
-                address: "35 Little Street, White heart lane....",
-                date: "01 March 2015"
-            },
-            {
-                id: 2,
-                title: "Miss",
-                firstName: "Clair",
-                surname: "Billy",
-                email: "cbilly@gmail.com",
-                mobile: "071 333 1133",
-                address: "35 Little Street, White heart lane....",
-                date: "01 March 2015"
-            }
-        ]
+    activate() {
+        this.CLEAR_STATE();
+        this.getCustomers();
     }
 
     addCustomer() {
-        this.customerData.addCustomer(this.idNumber, this.firstName, this.surname, this.email, this.mobile, this.address, this.date)
+        this.customerData.addCustomer(this.idNumber, this.title, this.firstName, this.surname, this.email, this.mobile, this.address, this.date)
             .then(response => {
-                console.log("customer ---->" , response);
+                console.log("adding a customer ---->", response);
+                this.CLEAR_STATE();
+                this.getCustomers();
             }, error => {
                 console.log("error adding customer ---> ", error);
                 this.msg = error;
             });
+    }
+
+    getCustomers() {
+        this.customerData.getCustomers()
+            .then(response => {
+                console.log("fetching customers ---->", response);
+                this.customers = response.content;
+            }, error => {
+                console.log("error fetching customers ---> ", error);
+                this.msg = error;
+            });
+    }
+
+    CLEAR_STATE() {
+        this.idNumber = "";
+        this.firstName = "";
+        this.title = "";
+        this.surname = "";
+        this.email = "";
+        this.mobile = "";
+        this.address = "";
+        this.date = "";
     }
 }

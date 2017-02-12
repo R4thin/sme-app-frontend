@@ -3,10 +3,11 @@
         <link href="assets/css/bootstrap.css" rel="stylesheet"/>
         <link href="assets/css/custom-styles.css" rel="stylesheet"/>
     </head>
-    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+    <table show.bind="customers != null || customers.size() > 0" class="table table-striped table-bordered table-hover"
+           id="dataTables-example">
         <tbody>
         <tr class="odd gradeX" repeat.for="customer of customers">
-            <td>${customer.id}.</td>
+            <td>${customer.idNumber}</td>
             <td>${customer.title}</td>
             <td>${customer.firstName}</td>
             <td>${customer.surname}</td>
@@ -17,5 +18,11 @@
         </tr>
         </tbody>
     </table>
-    </div>
+    <table show.bind="customers == null || customers.size() == 0">
+        <tbody>
+        <tr>
+            <td>No data to display.</td>
+        </tr>
+        </tbody>
+    </table>
 </template>

@@ -8,9 +8,23 @@ export class CustomerData{
         this.httpClient = httClient;
     }
 
-    addCustomer(idNumber, firstName, surname, email, mobile, address, date){
+    getCustomers(){
+        let path = "http://localhost:8081/customers";
+        var promise = new Promise((resolve, reject) =>{
+            this.httpClient.get(path, "")
+                .then(response =>{
+                    resolve(response);
+                }, error =>{
+                    reject(error);
+                });
+        });
+        return promise;
+    }
+
+    addCustomer(idNumber, title, firstName, surname, email, mobile, address, date){
         let customerInformation = {
             "idNumber": idNumber,
+            "title": title,
             "firstName": firstName,
             "surname": surname,
             "email": email,
