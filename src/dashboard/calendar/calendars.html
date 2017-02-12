@@ -24,7 +24,6 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
@@ -49,10 +48,10 @@
             </div>
         </nav>
         <div id="page-wrapper">
-            <div id="page-inner">
+            <div id="page-inner" repeat.for="route of router.navigation">
                 <div class="row">
-                    <div repeat.for="route of router.navigation" class="col-md-12">
-                        <h1 show.bind="route.isActive" class="page-header">
+                    <div class="col-md-12">
+                        <h1 show.bind="${route.isActive}" class="page-header">
                             ${route.title}
                         </h1>
                     </div>
@@ -62,7 +61,7 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div>
-                                    <compose model.bind="invoice" view="dashboard/invoice/invoice.html"></compose>
+                                    <compose model.bind="calendar" view="dashboard/calendar/calendar.html"></compose>
                                 </div>
                             </div>
                         </div>

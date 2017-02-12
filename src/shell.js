@@ -15,28 +15,27 @@ export class Shell {
 
             {
                 route: 'registration', moduleId: 'registration/registration',
-                name: "registration", title: 'Registration', nav: false
+                name: 'registration', title: 'Registration', nav: false
             },
-
-            {
-                route: 'main_dashboard', moduleId: 'dashboard/main_dashboard',
-                name: "main_dashboard", title: 'Dashboard', nav: false
-            },
+            // {
+            //     route: 'main_dashboard', moduleId: 'dashboard/main_dashboard',
+            //     name: 'main_dashboard', title: 'Dashboard', nav: false
+            // },
             {
                 route: 'main_dashboard/customers', moduleId: 'dashboard/customer/customers',
-                name: "customers", title: 'Customers', nav: true
+                name: 'customers', title: 'Customers', nav: true
             },
             {
-                route: 'main_dashboard/calendar', moduleId: 'dashboard/calendar/calendar',
-                name: "calendar", title: 'Calendar', nav: true
+                route: 'main_dashboard/calendar', moduleId: 'dashboard/calendar/calendars',
+                name: 'calendars', title: 'Calendars', nav: true
             },
             {
                 route: 'main_dashboard/invoices', moduleId: 'dashboard/invoice/invoices',
-                name: "invoices", title: 'Invoices', nav: true
+                name: 'invoices', title: 'Invoices', nav: true
             },
             {
-                route: 'main_dashboard/employees', moduleId: 'dashboard/employees/employees',
-                name: "employees", title: 'Employees', nav: true
+                route: 'main_dashboard/employees', moduleId: 'dashboard/employee/employees',
+                name: 'employees', title: 'Employees', nav: true
             }
         ]);
     }

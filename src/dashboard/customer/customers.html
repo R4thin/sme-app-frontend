@@ -1,3 +1,116 @@
 <template>
-        <compose model.bind="customer" view="dashboard/customer/customer.html"></compose>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Main Dashboard</title>
+        <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+        <link href="assets/css/custom-styles.css" rel="stylesheet"/>
+        <link href="assets/css/font-awesome.css" rel="stylesheet"/>
+
+    </head>
+    <body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">Dashboard</a>
+            </div>
+            <ul class="nav navbar-top-links navbar-right">
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-user">
+                        <!--<li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>-->
+                        <!--</li>-->
+                        <!--<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>-->
+                        <!--</li>-->
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li repeat.for="route of router.navigation" class="${route.isActive ? 'active': ''}">
+                        <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1.in"
+                           href.bind="route.href"><i class="fa fa-dashboard"></i>${route.title}</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="table-responsive">
+                        <table class="table add-customer-table-striped table-add-customer-table-bordered">
+                            <thead>
+                            <tr>
+                                <h2 class="page-header">
+                                    New customer details
+                                </h2>
+                            </tr>
+                            <tr>
+                                <th>ID number</th>
+                                <th>Title</th>
+                                <th>Firstname</th>
+                                <th>Surname</th>
+                                <th>Email</th>
+                                <th>Mobile</th>
+                                <th>Address</th>
+                                <th>Date</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="odd gradeX">
+                                <td><input value.bind="idNumber" class="add_input"/></td>
+                                <td><input value.bind="title" class="add_input"/></td>
+                                <td><input value.bind="firstName" class="add_input"/></td>
+                                <td><input value.bind="surname" class="add_input"/></td>
+                                <td><input value.bind="email" class="add_input"/></td>
+                                <td><input value.bind="mobile" class="add_input"/></td>
+                                <td><input value.bind="address" class="add_input"/></td>
+                                <td><input value.bind="date" class="add_input"/></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <tr>
+                                <td>
+                                    <button click.trigger="addCustomer(idNumber, title, firstName, surname, email, mobile, address, date)"
+                                            class="add_customer_button">Add Customer
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                        <table>
+                            <tr>
+                                <div class="row">
+                                    <div repeat.for="route of router.navigation" class="col-md-12">
+                                        <h1 show.bind="route.isActive" class="page-header">
+                                            ${route.title}
+                                        </h1>
+                                    </div>
+                                </div>
+                                <compose model.bind="customer" view="dashboard/customer/customer.html"></compose>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
 </template>

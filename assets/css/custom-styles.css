@@ -1,12 +1,3 @@
-/*----------------------------------------------
-Author : www.webthemez.com
-License: Commons Attribution 3.0
-http://creativecommons.org/licenses/by/3.0/
-------------------------------------------------*/
-
-/*----------------------------------------------
-    COMMON  STYLES    
-------------------------------------------------*/
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -42,10 +33,16 @@ body {
     border-radius: 10px ;
 }
 
+.login-validation {
+    margin-left: 35px;
+    font-size: 0.8em;
+    color: red;
+}
 .login-help {
     margin-left: 35px;
     font-size: 0.8em;
-    color: #777;
+    color: grey;
+    left: 10%;
 }
 
 .login-registration-header {
@@ -79,6 +76,17 @@ input {
     display: block;
     width: 78%;
     margin-left: 35px;
+    padding: 5px 20px;
+    font-size: 1em;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+.add_input {
+    display: block;
+    width: 78%;
+    margin-left: 0.5px;
     padding: 5px 20px;
     font-size: 1em;
     border-radius: 3px;
@@ -139,6 +147,31 @@ button:hover {
     box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.4);
     cursor: pointer;
     transition: all 0.15s ease-in-out;
+}
+.add_customer_button {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-family: inherit;
+    color: white;
+    /*background: #FF3838;*/
+    background: #09192A;
+    outline: none;
+    border: none;
+    padding: 5px 15px;
+    font-size: 1.3em;
+    font-weight: 400;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.4);
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+.table-add-customer-table-bordered th,
+.table-add-customer-table-bordered td {
+    border: 1px solid lightgray !important;
 }
 
 #wrapper {
@@ -618,5 +651,7 @@ ul.nav.nav-second-level.collapse.in {
         font-size: 19px;
     }
 }
+
+
 
 

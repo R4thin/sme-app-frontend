@@ -17,10 +17,10 @@ export class Login{
      this.authenicationService.authenticate(this.username, this.password)
          .then(response =>{
                 console.log("login response", response);
-                this.router.navigate("#/main_dashboard");
+                this.router.navigate("#/main_dashboard/customers");
             }, error =>{
                 console.log("login response", error);
-                this.msg = "Username or password is incorrect.";
+                this.msg = "Username/Email or password is incorrect.";
         });
     }
 
